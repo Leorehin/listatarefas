@@ -2,6 +2,7 @@ package fattocs.recrutamento.listatarefas.services;
 
 import java.util.List;
 
+import fattocs.recrutamento.listatarefas.dtos.TarefaOrdemDTO;
 import fattocs.recrutamento.listatarefas.dtos.TarefaRequestDTO;
 import fattocs.recrutamento.listatarefas.dtos.TarefaResponseDTO;
 
@@ -16,6 +17,6 @@ public interface TarefaService {
 
     List<TarefaResponseDTO> listarTarefas();
 
-
+    String reordenarTarefas(List<TarefaOrdemDTO> novaOrdem);
     
 }

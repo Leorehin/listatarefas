@@ -1,6 +1,8 @@
 package fattocs.recrutamento.listatarefas.dtos;
 
+
 import java.math.BigDecimal;
+
 
 import fattocs.recrutamento.listatarefas.model.Tarefa;
 import lombok.Getter;
@@ -10,11 +12,11 @@ import lombok.Getter;
 @Getter
 
 public class TarefaResponseDTO {
-    Long id;
-    String nome;
-    BigDecimal custo;
-    String dataLimite;
-    Long ordem;
+    private Long id;
+    private String nome;
+    private BigDecimal custo;
+    private String dataLimite;
+    private Long ordem;
 
 
     public TarefaResponseDTO(Tarefa tarefa){

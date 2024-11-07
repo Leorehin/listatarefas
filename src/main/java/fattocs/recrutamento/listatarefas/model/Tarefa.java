@@ -2,6 +2,7 @@ package fattocs.recrutamento.listatarefas.model;
 
 import java.math.BigDecimal;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,7 +41,7 @@ public class Tarefa {
     @Column(name = "DATA_LIMITE")
     String dataLimite;
 
-    @Column(name = "ORDEM", unique = true)
+    @Column(name = "ORDEM")
     Long ordem;
 
     @Builder
@@ -49,4 +50,10 @@ public class Tarefa {
         this.custo= custo;
         this.dataLimite = dataLimite;
     }
+    @Builder
+    public Tarefa(Long id, Long ordem){
+        this.id = id;
+        this.ordem = ordem;
+    }
+    
 }

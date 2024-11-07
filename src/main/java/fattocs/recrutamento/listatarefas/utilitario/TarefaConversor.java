@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import fattocs.recrutamento.listatarefas.dtos.TarefaOrdemDTO;
 import fattocs.recrutamento.listatarefas.dtos.TarefaRequestDTO;
 import fattocs.recrutamento.listatarefas.dtos.TarefaResponseDTO;
 import fattocs.recrutamento.listatarefas.model.Tarefa;
@@ -17,6 +18,12 @@ public class TarefaConversor {
         .nome(tarefaRequestDTO.getNome().toLowerCase())
         .custo(tarefaRequestDTO.getCusto())
         .dataLimite(tarefaRequestDTO.getDataLimite())
+        .build();
+    }
+    public Tarefa toTarefa( TarefaOrdemDTO tarefaOrdemDTO){
+        return Tarefa.builder()
+        .id(tarefaOrdemDTO.getId())
+        .ordem(tarefaOrdemDTO.getOrdem())
         .build();
     }
 
