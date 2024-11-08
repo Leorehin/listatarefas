@@ -34,7 +34,7 @@ public class TarefaServiceImpl implements TarefaService{
     public TarefaResponseDTO adicionarTarefa(TarefaRequestDTO tarefaRequestDTO) {
         Tarefa novaTarefa = tarefaConversor.toTarefa(tarefaRequestDTO);
         
-        if(tarefaRepository.existsByNome(novaTarefa.getNome().toLowerCase())== true){
+        if(tarefaRepository.existsByNome(novaTarefa.getNome().toLowerCase())){
             throw new RuntimeException("Essa tarefa ja existe no repositorio");
         }
         else if(novaTarefa.getNome().isEmpty() || novaTarefa.getDataLimite().isEmpty()){

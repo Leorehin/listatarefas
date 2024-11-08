@@ -9,7 +9,7 @@ import lombok.Getter;
 
 
 
-@Getter
+
 
 public class TarefaResponseDTO {
     private Long id;
@@ -19,11 +19,38 @@ public class TarefaResponseDTO {
     private Long ordem;
 
 
+
+
     public TarefaResponseDTO(Tarefa tarefa){
         this.id = tarefa.getId();
         this.nome = tarefa.getNome();
         this.custo= tarefa.getCusto();
         this.dataLimite = tarefa.getDataLimite();
         this.ordem = tarefa.getOrdem();
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+
+    public BigDecimal getCusto() {
+        return custo;
+    }
+
+
+    public String getDataLimite() {
+        return dataLimite;
+    }
+
+
+    public Long getOrdem() {
+        return ordem;
     }
 }

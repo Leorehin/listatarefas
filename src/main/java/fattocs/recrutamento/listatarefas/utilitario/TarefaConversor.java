@@ -14,17 +14,10 @@ import fattocs.recrutamento.listatarefas.model.Tarefa;
 public class TarefaConversor {
 
     public Tarefa toTarefa ( TarefaRequestDTO tarefaRequestDTO) {
-        return Tarefa.builder()
-        .nome(tarefaRequestDTO.getNome().toLowerCase())
-        .custo(tarefaRequestDTO.getCusto())
-        .dataLimite(tarefaRequestDTO.getDataLimite())
-        .build();
+        return new Tarefa(tarefaRequestDTO.getNome().toLowerCase(), tarefaRequestDTO.getCusto(), tarefaRequestDTO.getDataLimite());   
     }
     public Tarefa toTarefa( TarefaOrdemDTO tarefaOrdemDTO){
-        return Tarefa.builder()
-        .id(tarefaOrdemDTO.getId())
-        .ordem(tarefaOrdemDTO.getOrdem())
-        .build();
+        return new Tarefa(tarefaOrdemDTO.getId(), tarefaOrdemDTO.getOrdem());
     }
 
     public TarefaResponseDTO toResponseDTO(Tarefa tarefa){
